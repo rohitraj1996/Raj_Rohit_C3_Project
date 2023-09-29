@@ -1,6 +1,7 @@
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Restaurant {
     private String name;
@@ -31,8 +32,13 @@ public class Restaurant {
 
     // METHOD TO DISPLAY TOTAL AMOUNT OF ORDER
     public int calculateAmount(List<String> itemNames) {
-        // TODO Implement logic to return total cost of items
-        return 0;
+        // As given in the requirements of the question, assuming items in the list is present in the Restaurant object
+
+        return itemNames.stream()
+                .map(this::findItemByName)
+                .filter(Objects::nonNull)
+                .mapToInt(Item::getPrice)
+                .sum();
     }
 
     private Item findItemByName(String itemName){
