@@ -3,6 +3,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.time.LocalTime;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
@@ -41,6 +43,19 @@ class RestaurantTest {
     }
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<OPEN/CLOSED>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+    //>>>>>>>>>>>>>>>>>>>>>>>>>CALCULATE AMOUNT OF ORDER<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+    @Test
+    void total_order_value_should_return_the_sum_of_prices_of_items_in_the_list_equals_to_388() {
+
+        List<String> order = Arrays.asList("Sweet corn soup", "Vegetable lasagne");
+        int actualAmount = this.restaurant.calculateAmount(order);
+        assertEquals(388, actualAmount);
+    }
+
+    // <<<<<<<<<<<<<<<<<<<<<<<<<CALCULATE AMOUNT OF ORDER>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
     //>>>>>>>>>>>>>>>>>>>>>>>>>>>MENU<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

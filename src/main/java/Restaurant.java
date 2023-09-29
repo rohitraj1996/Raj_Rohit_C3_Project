@@ -29,6 +29,12 @@ public class Restaurant {
         return this.menu;
     }
 
+    // METHOD TO DISPLAY TOTAL AMOUNT OF ORDER
+    public int calculateAmount(List<String> itemNames) {
+        // TODO Implement logic to return total cost of items
+        return 0;
+    }
+
     private Item findItemByName(String itemName){
         for(Item item: menu) {
             if(item.getName().equals(itemName))
